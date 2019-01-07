@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AniLibrary</string>
+    <string name="app_test">测试</string>
 </resources>
