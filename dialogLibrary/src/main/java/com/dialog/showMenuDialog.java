@@ -1,4 +1,4 @@
-package example.com.animationdemo;
+package com.dialog;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -15,16 +15,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+
+import com.example.dialogLibray.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Abbott on 2017/4/5.
- * 显示简历操作的按钮
+ * Created by diaoyonglong on 2019/1/29
+ *
+ * @desc 底部弹起动画dialog
  */
-
 public class showMenuDialog extends Dialog implements View.OnClickListener {
     private Context context;
     private menuCallBack callBack;
@@ -137,6 +139,7 @@ public class showMenuDialog extends Dialog implements View.OnClickListener {
                 break;
         }
     }
+
     /**
      * 推荐页面该显示的按钮，约初试、PASS
      */
@@ -322,57 +325,56 @@ public class showMenuDialog extends Dialog implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.showMenuRL:
-                outputDialog();
-                callBack.onPressBtn(0);
-                break;
-            case R.id.dialog_menu_interview:
-                outputDialog();
-                callBack.onPressBtn(0);
-                break;
-            case R.id.dialog_menu_wait:
-                outputDialog();
-                callBack.onPressBtn(0);
-                break;
-            case R.id.dialog_menu_offer:
-                outputDialog();
-                callBack.onPressBtn(0);
-                break;
-            case R.id.dialog_menu_entry:
-                outputDialog();
-                callBack.onPressBtn(0);
-                break;
-            case R.id.dialog_menu_pass:
-                outputDialog();
-                callBack.onPressBtn(0);
-                break;
-            case R.id.dialog_show_menu:
-                outputDialog();
-                callBack.onPressBtn(0);
-                break;
-            case R.id.dialog_menu_interview_iv://面试
-                outputDialog();
-                callBack.onPressBtn(interViewStatus(candidateType));
-                break;
-            case R.id.dialog_menu_wait_iv://待定
-                outputDialog();
-                callBack.onPressBtn(waitStatus(candidateType));
-                break;
-            case R.id.dialog_menu_offer_iv://offer
-                outputDialog();
-                callBack.onPressBtn(offerStatus(candidateType));
-                break;
-            case R.id.dialog_menu_pass_iv://pass
-                callBack.onPressBtn(passStatus(candidateType));
-                outputDialog();
-                break;
-            case R.id.dialog_menu_entry_iv://入职
-                callBack.onPressBtn(entryStatus(candidateType));
-                outputDialog();
-                break;
-            default:
-                break;
+        int i = v.getId();
+        if (i == R.id.showMenuRL) {
+            outputDialog();
+            callBack.onPressBtn(0);
+
+        } else if (i == R.id.dialog_menu_interview) {
+            outputDialog();
+            callBack.onPressBtn(0);
+
+        } else if (i == R.id.dialog_menu_wait) {
+            outputDialog();
+            callBack.onPressBtn(0);
+
+        } else if (i == R.id.dialog_menu_offer) {
+            outputDialog();
+            callBack.onPressBtn(0);
+
+        } else if (i == R.id.dialog_menu_entry) {
+            outputDialog();
+            callBack.onPressBtn(0);
+
+        } else if (i == R.id.dialog_menu_pass) {
+            outputDialog();
+            callBack.onPressBtn(0);
+
+        } else if (i == R.id.dialog_show_menu) {
+            outputDialog();
+            callBack.onPressBtn(0);
+
+        } else if (i == R.id.dialog_menu_interview_iv) {
+            outputDialog();
+            callBack.onPressBtn(interViewStatus(candidateType));
+
+        } else if (i == R.id.dialog_menu_wait_iv) {
+            outputDialog();
+            callBack.onPressBtn(waitStatus(candidateType));
+
+        } else if (i == R.id.dialog_menu_offer_iv) {
+            outputDialog();
+            callBack.onPressBtn(offerStatus(candidateType));
+
+        } else if (i == R.id.dialog_menu_pass_iv) {
+            callBack.onPressBtn(passStatus(candidateType));
+            outputDialog();
+
+        } else if (i == R.id.dialog_menu_entry_iv) {
+            callBack.onPressBtn(entryStatus(candidateType));
+            outputDialog();
+
+        } else {
         }
     }
 

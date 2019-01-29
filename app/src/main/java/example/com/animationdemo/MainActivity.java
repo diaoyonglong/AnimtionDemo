@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.dialog.showMenuDialog;
+
 public class MainActivity extends AppCompatActivity implements showMenuDialog.menuCallBack {
     private showMenuDialog menuDialog;
     private Context context;
@@ -32,8 +34,6 @@ public class MainActivity extends AppCompatActivity implements showMenuDialog.me
     @Override
     public void onPressBtn(int id) {
         showMenu.setVisibility(View.VISIBLE);
-
-            Toast.makeText(context, "----pass>>>"+id, Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(context, "----pass>>>" + id, Toast.LENGTH_SHORT).show();
     }
 }
